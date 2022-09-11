@@ -18,6 +18,10 @@ const routes: Routes = [
     {
       path: 'conductores-disp',
       loadChildren: () => import('./../../pages/conductores-disp/conductores-disp.module').then( m => m.ConductoresDispPageModule)
+    },
+    {
+      path: 'perfil',
+      loadChildren: () => import('./../../pages/perfil/perfil.module').then( m => m.PerfilPageModule)
     },]
   }
 ];
