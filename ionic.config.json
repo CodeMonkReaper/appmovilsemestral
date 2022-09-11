@@ -1,0 +1,7 @@
+{
+  "name": "appmovilsemestral",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
