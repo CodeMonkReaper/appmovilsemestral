@@ -1,9 +1,35 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>programar_viaje</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+<ion-item>
+  <ion-label position="floating">Origen</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Destino</ion-label>
+  <ion-input></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="floating">Pasajeros</ion-label>
+  <ion-input type="number" value=""></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Fecha y Hora</ion-label>
+  <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime id="datetime"></ion-datetime>
+  </ng-template>
+</ion-modal>
+</ion-item>
+<ion-item>
+  <ion-button (click)="openPicker()">Jornada</ion-button>
+</ion-item>
+
 
 </ion-content>

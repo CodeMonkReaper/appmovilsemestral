@@ -1,19 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>TeLlevoApp</ion-title>
+    <ion-text slot="end">
+        <p>{{username || 'Anónimo'}}</p>
+    </ion-text>
+    <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
 <ion-tabs>
   <ion-tab-bar slot="bottom">
     <ion-tab-button tab="mis-viajes">
       <ion-icon name="calendar"></ion-icon>
-      <ion-label>mis viajes</ion-label>
-      <ion-badge>6</ion-badge>
+      <ion-label>Mis Viajes</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="programar-viaje">
       <ion-icon name="person-circle"></ion-icon>
-      <ion-label>programar viaje</ion-label>
+      <ion-label>Programar Viaje</ion-label>
     </ion-tab-button>
 
     <ion-tab-button tab="conductores-disp">
       <ion-icon name="map"></ion-icon>
-      <ion-label>lista de conductores</ion-label>
+      <ion-label>Conductores</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

@@ -1,9 +1,46 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>conductores_disp</ion-title>
+    <ion-title>Conductores Disponibles</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
+  <ion-list *ngFor="let item of [1]" >
+    <ion-card  routerLink="/conductores-disp">
+      <ion-card-header>
+        <ion-card-subtitle>Conductor Diurno</ion-card-subtitle>
+        <ion-card-title>Nombre Conductor</ion-card-title>
+      </ion-card-header>
+      <ion-img src="/assets/chevy_sail.jpg"></ion-img>
+      <ion-card-content>
+        Disponible desde ..:..hrs. 
+        Capacidad: 4 pasajeros
+        LLego hasta San Pedro de la Paz
+      </ion-card-content>
+      <ion-button (click)="presentAlert()">Confirmar</ion-button>
+        <p>{{ handlerMessage }}</p>
+        <p>{{ roleMessage }}</p>
+    </ion-card>
+  </ion-list>
+
+  <ion-list *ngFor="let item of [1]" >
+    <ion-card  routerLink="/conductores-disp">
+      <ion-card-header>
+        <ion-card-subtitle>Conductor Vespertino</ion-card-subtitle>
+        <ion-card-title>Nombre Conductor</ion-card-title>
+      </ion-card-header>
+      <ion-img src="/assets/yamaha.jpg"></ion-img>
+      <ion-card-content>
+        Disponible desde ..:..hrs. 
+        Capacidad: 1 pasajeros
+        LLego hasta Coronel
+      </ion-card-content>
+      <ion-button (click)="presentAlert()">Confirmar</ion-button>
+        <p>{{ handlerMessage }}</p>
+        <p>{{ roleMessage }}</p>
+    </ion-card>
+  </ion-list>
+  
 
 </ion-content>

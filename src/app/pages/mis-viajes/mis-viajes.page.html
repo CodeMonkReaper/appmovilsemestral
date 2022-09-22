@@ -1,9 +1,55 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>mis_viajes</ion-title>
   </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
+  <ion-list *ngFor="let item of [1]">
+    <ion-card routerLink="/mis-viajes">
+      <ion-card-header>
+        <ion-card-subtitle>Viaje Vespertino</ion-card-subtitle>
+        <ion-card-title>Vehiculo de.....</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Viaje desde.... hasta.... a las 22:00hrs
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngFor="let item of [2]">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Viaje Diurno</ion-card-subtitle>
+        <ion-card-title>Vehiculo de.....</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Viaje desde.... hasta.... a las 15:00hrs
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngFor="let item of [3]">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Viaje Vespertino</ion-card-subtitle>
+        <ion-card-title>Vehiculo de.....</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Viaje desde.... hasta.... a las 23:30hrs
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+  <ion-list *ngFor="let item of [4]">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Viaje Diurno</ion-card-subtitle>
+        <ion-card-title>Vehiculo de.....</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        Viaje desde.... hasta.... a las 18:00hrs
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+
+
 
 </ion-content>

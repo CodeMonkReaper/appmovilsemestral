@@ -18,7 +18,8 @@ const routes: Routes = [
     {
       path: 'conductores-disp',
       loadChildren: () => import('./../../pages/conductores-disp/conductores-disp.module').then( m => m.ConductoresDispPageModule)
-    },]
+    },
+  ]
   }
 ];
 
