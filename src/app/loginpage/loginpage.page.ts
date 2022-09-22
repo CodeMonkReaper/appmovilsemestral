@@ -47,7 +47,7 @@ export class LoginpagePage implements OnInit {
       header: 'Acceso Denegado',
       subHeader: '',
       message: 'Usuario no existe',
-      cssClass:'mialerta',
+      cssClass: 'mialerta',
       buttons: [
         {
           text: 'Cancelar',
@@ -64,12 +64,12 @@ export class LoginpagePage implements OnInit {
           },
         },
       ],
-      mode:'ios',
-      backdropDismiss:false
+      mode: 'ios',
+      backdropDismiss: false
     });
 
     await alert.present();
-    
+
     const { role } = await alert.onDidDismiss();
     console.log(`Dismissed with role: ${role}`);
   }

@@ -1,11 +1,16 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>TeLlevoApp</ion-title>
-    <ion-text slot="end">
-        <p>{{username || 'Anónimo'}}</p>
-    </ion-text>
-    <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
-  </ion-toolbar>
+      <ion-button slot="end" fill="clear" color="medium" size="small" routerLink="/perfil">
+        {{username || 'Anónimo'}}
+      </ion-button>
+      <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
+      <ion-button slot="end" fill="outline" color="medium" routerLink="/loginpage">
+        <ion-buttons>
+          <ion-icon name="log-out-outline"></ion-icon>
+        </ion-buttons>
+      </ion-button>
+    </ion-toolbar>
 </ion-header>
 
 <ion-tabs>
