@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-perfil',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PerfilPage implements OnInit {
 
-  constructor() { }
+  nombre:String='';
+  constructor(private storage: Storage, private router: Router) {}
 
-  ngOnInit() {
+  cerrarSesion(){
+    this.cerrarSesion();
+    this.router.navigate(['/loginpage']);
+  }
+
+  ngOnInit(){
+      this.vernombre();
+      console.log('Logeado');
+  }
+  async cerrar()
+  {
+    await this.storage.set('sesion', null);
+  }
+
+  async vernombre()
+  {
+    this.nombre=await this.storage.get('sesion');
   }
 
 }

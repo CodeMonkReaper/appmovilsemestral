@@ -1,10 +1,17 @@
 <ion-content [fullscreen]="true">
 
   <ion-toolbar>
+    <ion-title>Perfil</ion-title>
     <ion-buttons slot="start">
       <ion-buttons slot="start">
         <ion-back-button defaultHref="/tabs/mis-viajes"></ion-back-button>
       </ion-buttons>
     </ion-buttons>
   </ion-toolbar>
+
+<ion-content>
+  <ion-text position="floating" class="ion-padding-start">
+    <p>Usuario</p>
+    {{nombre}}
+  </ion-text>
 </ion-content>

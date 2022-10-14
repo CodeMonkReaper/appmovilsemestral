@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-title>TeLlevoApp</ion-title>
       <ion-button slot="end" fill="clear" color="medium" size="small" routerLink="/perfil">
-        {{username || 'Anónimo'}}
+        {{nombre}}
       </ion-button>
       <ion-icon slot="end" name="person-circle-outline" class="ion-padding" size="large"></ion-icon>
       <ion-button slot="end" fill="outline" color="medium" routerLink="/loginpage">
@@ -27,7 +27,7 @@
 
     <ion-tab-button tab="conductores-disp">
       <ion-icon name="map"></ion-icon>
-      <ion-label>Conductores</ion-label>
+      <ion-label>Conductores Disponibles</ion-label>
     </ion-tab-button>
   </ion-tab-bar>
 </ion-tabs>

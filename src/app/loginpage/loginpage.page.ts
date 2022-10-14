@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationExtras, Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
+
 
 @Component({
   selector: 'app-loginpage',
@@ -9,68 +10,31 @@ import { AlertController } from '@ionic/angular';
 })
 export class LoginpagePage implements OnInit {
 
-  usuario =
-    {
-      username: '',
-      password: ''
-    }
+  usuario = {
+    username: '',
+    password: ''
+  };
 
-  constructor(private router: Router,
-    private alertController: AlertController) { }
+  constructor(private storage: Storage, private router: Router) { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    if (this.usuario.username == "admin" && this.usuario.password == "0000") {
-      console.log("Ok");
-      let navigationExtras: NavigationExtras = {
-        state: {
-          usr: this.usuario,
-          algo: 'algo',
-        }
-      }
-      console.log(navigationExtras);
+    console.log('Login');
+    this.validarusuario();
+  }
 
-      this.router.navigate(['/tabs/mis-viajes'], navigationExtras);
-
-
+  async validarusuario() {
+    let usr = await this.storage.get(this.usuario.username);
+    if (usr != null) {
+      console.log(usr);
+      this.storage.set('sesion', this.usuario.username);
+      this.router.navigate(['/tabs/mis-viajes']);
     }
     else {
-      console.log("Denegado");
-      this.presentAlert();
+      console.log('Usuario no corresponde');
     }
   }
 
-  async presentAlert() {
-    const alert = await this.alertController.create({
-      header: 'Acceso Denegado',
-      subHeader: '',
-      message: 'Usuario no existe',
-      cssClass: 'mialerta',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          handler: () => {
-            console.log('Alert canceled');
-          },
-        },
-        {
-          text: 'Aceptar',
-          role: 'confirm',
-          handler: () => {
-            console.log('Alert confirmed');
-          },
-        },
-      ],
-      mode: 'ios',
-      backdropDismiss: false
-    });
-
-    await alert.present();
-
-    const { role } = await alert.onDidDismiss();
-    console.log(`Dismissed with role: ${role}`);
-  }
 }

@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text="volver" mode="ios" defaultHref="/loginpage"></ion-back-button>
+    </ion-buttons>
+    <ion-icon slot="end" name="add" size="large" class="ion-padding"></ion-icon>
+    <ion-title>Registrar Usuario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-text color="secondary" class="ion-text-center">
+    <h1>Crear Cuenta</h1>
+  </ion-text>
+  <form #frmRegister="ngForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Nombre de Usuario</ion-label>
+      <ion-input required type="text" name="username" [(ngModel)]="usuario.username"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input required type="password" name="password" [(ngModel)]="usuario.password"></ion-input>
+    </ion-item>
+    <ion-button expand="full" class="ion-margin-top" color="primary" type="submit" [disabled]="frmRegister.invalid">
+      Crear cuenta
+    </ion-button>
+  </form>
+
+</ion-content>

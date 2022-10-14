@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/storage-angular';
+
 
 
 @Component({
@@ -7,27 +9,28 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './tabs.page.html',
   styleUrls: ['./tabs.page.scss'],
 })
-export class TabsPage {
+export class TabsPage implements OnInit{
 
-  username:string;
-  
-  constructor(
-      private router:Router,
-      private activatedRouter:ActivatedRoute,
+  nombre:String='';
+  constructor(private storage: Storage, private router: Router) {}
 
-  ) {
-    this.activatedRouter.queryParams.subscribe(params=>{
-
-      if(this.router.getCurrentNavigation().extras.state)
-      {
-        let usuario=this.router.getCurrentNavigation().extras.state.usr;
-        console.log("Llego" + usuario.username);
-        this.username=usuario.username;
-      }
-      
-    })
-
+  cerrarSesion(){
+    this.cerrarSesion();
+    this.router.navigate(['/loginpage']);
   }
 
+  ngOnInit(){
+      this.vernombre();
+      console.log('a');
+  }
+  async cerrar()
+  {
+    await this.storage.set('sesion', null);
+  }
+
+  async vernombre()
+  {
+    this.nombre=await this.storage.get('sesion');
+  }
 }
 
