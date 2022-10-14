@@ -30,6 +30,11 @@ const routes: Routes = [
     path: 'rpass',
     loadChildren: () => import('./pages/rpass/rpass.module').then( m => m.RpassPageModule)
   },
+  {
+    path: 'update-travel',
+    loadChildren: () => import('./pages/update-travel/update-travel.module').then( m => m.UpdateTravelPageModule)
+  },
+
 
 
 

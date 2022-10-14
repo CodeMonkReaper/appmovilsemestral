@@ -15,7 +15,7 @@ export class RegisterPage implements OnInit {
     password:''
   };
 
-  constructor(private storage:Storage,private router:Router) { }
+  constructor(private storage: Storage,private router: Router) { }
 
   ngOnInit() {
   }

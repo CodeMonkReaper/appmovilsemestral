@@ -1,12 +1,13 @@
 <ion-header>
   <ion-toolbar>
+    <ion-title>Modificar Viaje</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card class="ion-align-self-center">
     <ion-item>
-      <ion-textarea [(ngModel)]="itemName" placeholder="Ingrese su nombre"></ion-textarea>
+      <ion-textarea [(ngModel)]="itemName" placeholder="Write task here"></ion-textarea>
     </ion-item>
     <ion-item>
       <ion-textarea [(ngModel)]="itemSurName" placeholder="Ingrese su apellido"></ion-textarea>
@@ -34,14 +35,7 @@
       <span>{{categorySelectedCategory}}</span>
     </ion-item>
 
-    <ion-item>
-      <ion-chip *ngFor="let tag of categories; let i = index" color="secondary" outline="true"
-        (click)="selectCategory(i)">
-        <ion-label color="secondary">{{tag}}</ion-label>
-      </ion-chip>
-    </ion-item>
-
-    <ion-button class="ion-margin" expand="block" (click)="add()">Añadir nuevo Viaje</ion-button>
+    <ion-button class="ion-margin" expand="block" (click)="update()">Modificar Viaje</ion-button>
 
   </ion-card>
 
